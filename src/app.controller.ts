@@ -1,11 +1,17 @@
 import { Controller,Get } from "@nestjs/common";
 
-
-@Controller()
+//prefix : di browser harus localhost:3000/app/home
+@Controller('App')
 export class AppController{
-    @Get()
+    @Get('/home')
 
     getRootRoute(){
-        return "Hello world"
+        return "this home page"
+    }
+
+    //membuat controller atau halaman baru
+    @Get('contact')
+    getContact(){
+        return 'this contact'
     }
 }
